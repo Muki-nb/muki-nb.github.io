@@ -70,7 +70,7 @@ function buildGame(config = {}){
         },
 
         draw : function(){
-            while(this.hand.length < this.attribute["科技"] - 2 && this.hand.length <= 5 && this.deck.length > 0){
+            while(this.hand.length < this.attribute["科技"] - 2 && this.hand.length < 5 && this.deck.length > 0){
                 this.hand.push(this.deck[0]);
                 this.deck.shift();
             }

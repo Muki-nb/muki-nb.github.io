@@ -296,7 +296,7 @@ let cards = {
             let cards = [];
             for(let card of cardset["captain"]) cards.push(card.name);
             for(let cardname of cards){
-                if(removeCard(cardname)) break;
+                if(game.removeCard(cardname)) break;
             }
         }
     ),
@@ -363,7 +363,10 @@ let cards = {
     
     "电力计划":buildCard(
         "电力计划",
-        "<b>所有</b> + 1<br><i>你已到达目前开发的顶峰！享受游戏吧！</i>"
+        "<b>所有</b> + 1<br><i>你已到达目前开发的顶峰！享受游戏吧！</i>",
+        function(game){
+            for(let attribute in game.attribute) game.attribute[attribute]++;
+        }
     )
 }
 
